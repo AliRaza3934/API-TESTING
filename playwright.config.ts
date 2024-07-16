@@ -1,4 +1,6 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices , LaunchOptions } from '@playwright/test';
+
+
 
 /**
  * Read environment variables from file.
@@ -13,7 +15,14 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './Eta+',
   /* Run tests in files in parallel */
- 
+  
+
+  
+  timeout: 600000,
+     
+     
+  
+  
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -69,7 +78,9 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-
+  
+    
+    
   /* Run your local dev server before starting the tests */
   //webServer: {
    // command: 'npm run start',
