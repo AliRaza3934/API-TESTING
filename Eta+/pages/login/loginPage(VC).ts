@@ -13,6 +13,7 @@ public async passwordField(){
 public async signinButton(){
 
     await this.page.locator("//span[@class='p-button-label']").click()
+    console.log("sucessfully login")
 }
 
 

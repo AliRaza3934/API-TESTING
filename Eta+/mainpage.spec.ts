@@ -1,11 +1,13 @@
 import { test, expect } from '@playwright/test';
 import{chromium,Page,Browser} from '@playwright/test';
-import { IntEnviorment } from './pages/loginPage';
+import { IntEnviorment } from './pages/login/loginPage(VC)';
+import { InvalidTestCase } from './pages/login/loginPage(IVC)';
+
 
 //let loginFunc = new Login();
 
-//A2 Fist Login Test case
-test('Int Enviorment', async ({ page }) => {
+//A2 Login Test case with valid credentials
+test('A2 Login Test case with valid credentials', async ({ page }) => {
   
   const intenviorment = new IntEnviorment(page);
   await page.goto('https://int.eta-plus.com/#!/startpage/login');
@@ -13,9 +15,9 @@ test('Int Enviorment', async ({ page }) => {
   await intenviorment.passwordField();
   await intenviorment.signinButton();
  
-  await page.waitForTimeout(50000)
+//await page.waitForTimeout(30000);
   
-  //test.setTimeout(30000);
+//test.setTimeout(30000);
  // await  loginFunc.loginUser("ETA+PMO","Mav34733");
   
 // Expect a title "to contain" a substring.
@@ -24,3 +26,16 @@ test('Int Enviorment', async ({ page }) => {
 //test.skip('',async ({ page}) => {
  //await  loginFunc.loginUser("ETA+PMO","Mav34733");
 //});
+
+//A3 Login Test case with invalid credentials
+test('A3 Login Test case with invalid credentials',async ({page}) => {
+const invalidtestcase = new InvalidTestCase(page);
+await page.goto('https://int.eta-plus.com/#!/startpage/login');
+await invalidtestcase.usernameField();
+await invalidtestcase.passwordField();
+await invalidtestcase.siginButton();
+
+//await page.waitForTimeout(30000);
+
+});
+
