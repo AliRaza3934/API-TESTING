@@ -1,14 +1,16 @@
 import{Page} from '@playwright/test'
 
+let username ="ETA+PMO"
+let password ="Mav34733"
 
 export class IntEnviorment{
 
 public async usernameField(){
 
-    await this.page.locator("#username").fill("ETA+ PMO");
+    await this.page.locator("#username").fill("username");
 }
 public async passwordField(){
-    await this.page.locator("//input[@placeholder='Passwort']").fill("Mav34733");
+    await this.page.locator("//input[@placeholder='Passwort']").fill("password");
 }
 public async signinButton(){
 

@@ -1,12 +1,13 @@
 import {Page} from "@playwright/test"
-
+ let username ="ETA+PMOzz"
+ let password ="Mav347336"
 export class InvalidTestCase{
 
 public async usernameField(){
- await this.page.locator('#username').fill("ETA+ PMOzz");
+ await this.page.locator('#username').fill("username");
 }
 public async passwordField(){
- await this.page.locator("//input[@placeholder='Passwort']").fill("Mav347336");
+ await this.page.locator("//input[@placeholder='Passwort']").fill("password");
 }
 public async siginButton(){
 await this.page.locator("//span[@class='p-button-label']").click();

@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import{chromium,Page,Browser} from '@playwright/test';
 import { IntEnviorment } from './pages/login/loginPage(VC)';
 import { InvalidTestCase } from './pages/login/loginPage(IVC)';
+import { ValidEmailInvalidPassword } from './pages/login/loginPage(VEIP)';
 
 
 //let loginFunc = new Login();
@@ -38,4 +39,13 @@ await invalidtestcase.siginButton();
 //await page.waitForTimeout(30000);
 
 });
+
+test('A4 Login Test case with valid email and invalid password credentials',async({page}) =>{
+  const validEmailInvalidPassword = new ValidEmailInvalidPassword(page);
+  await page.goto('https://int.eta-plus.com/#!/startpage/login');
+  await validEmailInvalidPassword.usernameField();
+  await validEmailInvalidPassword.passwordField();
+  await validEmailInvalidPassword.siginButton();
+
+})
 
