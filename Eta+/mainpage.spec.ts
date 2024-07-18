@@ -4,15 +4,18 @@ import { IntEnviorment } from './pages/login/loginPage(VC)';
 import { InvalidTestCase } from './pages/login/loginPage(IVC)';
 import { ValidEmailInvalidPassword } from './pages/login/loginPage(VEIP)';
 import { InvalidEmailValidPassword } from './pages/login/loginPage(IEVP)';
+import { beforeEach } from 'node:test';
 
 
 //let loginFunc = new Login();
 
 //A2 Login Test case with valid credentials
+test.beforeEach('ETA+Page',async({page}) =>{
+  await page.goto('https://int.eta-plus.com/#!/startpage/login');
+})
 test('A2 Login Test case with valid credentials', async ({ page }) => {
   
   const intenviorment = new IntEnviorment(page);
-  await page.goto('https://int.eta-plus.com/#!/startpage/login');
   await intenviorment.usernameField();
   await intenviorment.passwordField();
   await intenviorment.signinButton();
@@ -32,7 +35,7 @@ test('A2 Login Test case with valid credentials', async ({ page }) => {
 //A3 Login Test case with invalid credentials
 test('A3 Login Test case with invalid credentials',async ({page}) => {
 const invalidtestcase = new InvalidTestCase(page);
-await page.goto('https://int.eta-plus.com/#!/startpage/login');
+//await page.goto('https://int.eta-plus.com/#!/startpage/login');
 await invalidtestcase.usernameField();
 await invalidtestcase.passwordField();
 await invalidtestcase.siginButton();
@@ -43,7 +46,7 @@ await invalidtestcase.siginButton();
 
 test('A4 Login Test case with valid email and invalid password credentials',async({page}) =>{
   const validEmailInvalidPassword = new ValidEmailInvalidPassword(page);
-  await page.goto('https://int.eta-plus.com/#!/startpage/login');
+  //await page.goto('https://int.eta-plus.com/#!/startpage/login');
   await validEmailInvalidPassword.usernameField();
   await validEmailInvalidPassword.passwordField();
   await validEmailInvalidPassword.siginButton();
@@ -52,7 +55,7 @@ test('A4 Login Test case with valid email and invalid password credentials',asyn
 
 test('A5 Login Test case with invalid email and valid password credentials',async({page}) =>{
   const invalidEmailValidPassword = new InvalidEmailValidPassword(page);
-  await page.goto('https://int.eta-plus.com/#!/startpage/login');
+  //await page.goto('https://int.eta-plus.com/#!/startpage/login');
   await invalidEmailValidPassword.usernameField();
   await invalidEmailValidPassword.passwordField();
   await invalidEmailValidPassword.siginButton();
