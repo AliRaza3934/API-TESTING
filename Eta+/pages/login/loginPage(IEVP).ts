@@ -1,23 +1,30 @@
 import{Page} from '@playwright/test'
+import{pageFixture} from "../hooks/PageFixture"
+import * as loginPageResources from "../resources/LoginPageIEVPLocators.json"
+import { PageElement } from "../resources/interfaces/IpageElements";
+
 
 let username ="ETA+PMOzz"
 let password ="Mav34733"
+
+function getResource(resourceName: string) {
+    return loginPageResources.webElements.find((element: PageElement) => element.elementName == resourceName) as PageElement
+    }
 export class InvalidEmailValidPassword{
-
-public async usernameField(){
-    await this.page.locator("//input[@id='username']").fill("username");
-}
-
-public async passwordField(){
-    await this.page.locator("//input[@placeholder='Passwort']").fill("password");
-}
-
-public async siginButton(){
-    await this.page.locator("//span[@class='p-button-label']").click();
+    loginPageLocator ={
+        usernameField : () => pageFixture.page.locator(getResource('usernameField').selectorValue),
+        passwordField : () => pageFixture.page.locator(getResource('passwordField').selectorValue),
+        signinButton  : () => pageFixture.page.locator(getResource('siginButton').selectorValue),
+    }
+public async testCases(){
+    await this.loginPageLocator.usernameField().fill("username");
+    await this.loginPageLocator.passwordField().fill("password");
+    await this.loginPageLocator.signinButton().click()
     console.log("username and password is not match")
 }
 
+
 constructor(public page:Page){
-this.page = page;
+    pageFixture.page = page;
 }
 }

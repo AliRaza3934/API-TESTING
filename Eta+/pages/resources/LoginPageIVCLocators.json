@@ -1,0 +1,17 @@
+{
+    "name": "LoginPage(IVC)",
+    "webElements":[
+        {
+            "elementName":"usernameField",
+            "selectorValue":"//input[@id='username']"
+        },
+        {
+            "elementName":"passwordField",
+            "selectorValue":"//input[@placeholder='Passwort']"
+        },
+        {
+            "elementName":"siginButton",
+            "selectorValue":"//button[@type='button']"
+        }
+    ]
+}

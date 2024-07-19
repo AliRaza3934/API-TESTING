@@ -34,9 +34,7 @@ test('A2 Login Test case with valid credentials', async ({ page }) => {
 test('A3 Login Test case with invalid credentials',async ({page}) => {
 const invalidtestcase = new InvalidTestCase(page);
 //await page.goto('https://int.eta-plus.com/#!/startpage/login');
-await invalidtestcase.usernameField();
-await invalidtestcase.passwordField();
-await invalidtestcase.siginButton();
+await invalidtestcase.loginTest();
 
 //await page.waitForTimeout(30000);
 
@@ -45,17 +43,11 @@ await invalidtestcase.siginButton();
 test('A4 Login Test case with valid email and invalid password credentials',async({page}) =>{
   const validEmailInvalidPassword = new ValidEmailInvalidPassword(page);
   //await page.goto('https://int.eta-plus.com/#!/startpage/login');
-  await validEmailInvalidPassword.usernameField();
-  await validEmailInvalidPassword.passwordField();
-  await validEmailInvalidPassword.siginButton();
-
+  await validEmailInvalidPassword.loginTestCase();
 })
 
 test('A5 Login Test case with invalid email and valid password credentials',async({page}) =>{
   const invalidEmailValidPassword = new InvalidEmailValidPassword(page);
   //await page.goto('https://int.eta-plus.com/#!/startpage/login');
-  await invalidEmailValidPassword.usernameField();
-  await invalidEmailValidPassword.passwordField();
-  await invalidEmailValidPassword.siginButton();
-
+  await invalidEmailValidPassword.testCases();
 })
