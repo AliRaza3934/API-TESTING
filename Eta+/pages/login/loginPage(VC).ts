@@ -1,31 +1,33 @@
 import{Page} from '@playwright/test'
+import{pageFixture} from "../hooks/PageFixture"
+import * as loginPageResources from "../resources/LoginPageVCLocators.json"
+import { PageElement } from "../resources/interfaces/IpageElements";
 
 let username ="ETA+PMO"
 let password ="Mav34733"
 
+function getResource(resourceName: string) {
+    return loginPageResources.webElements.find((element: PageElement) => element.elementName == resourceName) as PageElement
+    }
+
 export class IntEnviorment{
+        loginPageLocator ={
+            usernameField : () => pageFixture.page.locator(getResource('usernameField').selectorValue),
+            passwordField : () => pageFixture.page.locator(getResource('passwordField').selectorValue),
+            signinButton  : () => pageFixture.page.locator(getResource('siginButton').selectorValue),
+        }
+        
+public async loginUser(){
 
-public async usernameField(){
-
-    await this.page.locator("#username").fill("username");
-}
-public async passwordField(){
-    await this.page.locator("//input[@placeholder='Passwort']").fill("password");
-}
-public async signinButton(){
-
-    await this.page.locator("//span[@class='p-button-label']").click()
+    await this.loginPageLocator.usernameField().fill("username");
+    await this.loginPageLocator.passwordField().fill("password");
+    await this.loginPageLocator.signinButton().click()
     console.log("sucessfully login")
 }
 
-
-
-    
-
-//intenviorment: IntEnviorment;
 constructor(public page : Page){
-    this.page = page;
+    pageFixture.page = page;
     //this.intenviorment = new IntEnviorment(this.page);
 }
-
 }
+

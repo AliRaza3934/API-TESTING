@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 import{chromium,Page,Browser} from '@playwright/test';
-import { IntEnviorment } from './pages/login/loginPage(VC)';
-import { InvalidTestCase } from './pages/login/loginPage(IVC)';
-import { ValidEmailInvalidPassword } from './pages/login/loginPage(VEIP)';
-import { InvalidEmailValidPassword } from './pages/login/loginPage(IEVP)';
+import { IntEnviorment } from './pages/login/LoginPage(VC).ts';
+import { InvalidTestCase } from './pages/login/LoginPage(IVC).ts';
+import { ValidEmailInvalidPassword } from './pages/login/LoginPage(VEIP).ts';
+import { InvalidEmailValidPassword } from './pages/login/LoginPage(IEVP).ts';
 import { beforeEach } from 'node:test';
 
 
@@ -16,9 +16,7 @@ test.beforeEach('ETA+Page',async({page}) =>{
 test('A2 Login Test case with valid credentials', async ({ page }) => {
   
   const intenviorment = new IntEnviorment(page);
-  await intenviorment.usernameField();
-  await intenviorment.passwordField();
-  await intenviorment.signinButton();
+  await intenviorment.loginUser();
  
 //await page.waitForTimeout(30000);
   

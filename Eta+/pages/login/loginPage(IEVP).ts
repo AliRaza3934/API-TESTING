@@ -5,7 +5,7 @@ let password ="Mav34733"
 export class InvalidEmailValidPassword{
 
 public async usernameField(){
-    await this.page.locator('#username').fill("username");
+    await this.page.locator("//input[@id='username']").fill("username");
 }
 
 public async passwordField(){
