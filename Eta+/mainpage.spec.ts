@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 import{chromium,Page,Browser} from '@playwright/test';
-import { ValidTestCase } from './pages/login/LoginPage(VC)';
-import { InvalidTestCase } from './pages/login/LoginPage(IVC)';
-import { ValidEmailInvalidPassword } from './pages/login/LoginPage(VEIP)';
-import { InvalidEmailValidPassword } from './pages/login/LoginPage(IEVP)';
+import { ValidTestCase } from '../Eta+/pages/login/loginPage(VC)';
+import { InvalidTestCase } from '../Eta+/pages/login/loginPage(IVC)';
+import { ValidEmailInvalidPassword } from '../Eta+/pages/login/loginPage(VEIP)';
+import { InvalidEmailValidPassword } from '../Eta+/pages/login/loginPage(IEVP)';
 import { beforeEach } from 'node:test';
 
 
