@@ -10,7 +10,7 @@ function getResource(resourceName: string) {
     return loginPageResources.webElements.find((element: PageElement) => element.elementName == resourceName) as PageElement
     }
 
-export class IntEnviorment{
+export class ValidTestCase{
         loginPageLocator ={
             usernameField : () => pageFixture.page.locator(getResource('usernameField').selectorValue),
             passwordField : () => pageFixture.page.locator(getResource('passwordField').selectorValue),
