@@ -6,6 +6,7 @@ import { ValidEmailInvalidPassword } from '../Eta+/pages/login/loginPage(VEIP)';
 import { InvalidEmailValidPassword } from '../Eta+/pages/login/loginPage(IEVP)';
 import { beforeEach } from 'node:test';
 import { CheckBox } from './pages/login/loginPage(checkbox)';
+import { ForgotPassword } from './pages/login/loginPage(forgetPassword)';
 
 
 //let loginFunc = new Login();
@@ -56,7 +57,11 @@ test('A5 Login Test case with invalid email and valid password credentials',asyn
 test('A6 Login Test case should check the box and keep login',async({page}) => {
  const checkBox = new CheckBox(page);
  await checkBox.loggIned();
+})
 
- 
+test('A7 Login Test Case should click on the forgot password',async({page}) => {
+  const forgotPassword = new ForgotPassword(page);
+  await forgotPassword.forgot();
+  
 })
 
