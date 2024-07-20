@@ -59,7 +59,7 @@ test('A6 Login Test case should check the box and keep login',async({page}) => {
  await checkBox.loggIned();
 })
 
-test('A7 Login Test Case should click on the forgot password',async({page}) => {
+test('A7 and A8 Login Test Case should click on the forgot password and send the link',async({page}) => {
   const forgotPassword = new ForgotPassword(page);
   await forgotPassword.forgot();
   
