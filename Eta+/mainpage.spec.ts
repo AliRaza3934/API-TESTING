@@ -5,6 +5,7 @@ import { InvalidTestCase } from '../Eta+/pages/login/loginPage(IVC)';
 import { ValidEmailInvalidPassword } from '../Eta+/pages/login/loginPage(VEIP)';
 import { InvalidEmailValidPassword } from '../Eta+/pages/login/loginPage(IEVP)';
 import { beforeEach } from 'node:test';
+import { CheckBox } from './pages/login/loginPage(checkbox)';
 
 
 //let loginFunc = new Login();
@@ -51,3 +52,11 @@ test('A5 Login Test case with invalid email and valid password credentials',asyn
   //await page.goto('https://int.eta-plus.com/#!/startpage/login');
   await invalidEmailValidPassword.testCases();
 })
+
+test('A6 Login Test case should check the box and keep login',async({page}) => {
+ const checkBox = new CheckBox(page);
+ await checkBox.loggIned();
+
+ 
+})
+
