@@ -19,7 +19,7 @@ function getResource(resourceName: string) {
         await this.loginPageLocator.forgotpasswordField().click();
         await this.loginPageLocator.emailField().fill('emailAddress');
         await this.loginPageLocator.sendbutton().click()
-        console.log("user can clcik on forgot password option and send to the link in the provided email address")
+        console.log("user can click on forgot password option and send to the link in the provided email address")
     }
     
     

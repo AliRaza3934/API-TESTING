@@ -19,8 +19,7 @@ test('A2 Login Test case with valid credentials', async ({ page }) => {
   
   const validtestcase = new ValidTestCase(page);
   await validtestcase.loginUser();
- 
-//await page.waitForTimeout(30000);
+  await page.waitForTimeout(30000);
   
 //test.setTimeout(30000);
  // await  loginFunc.loginUser("ETA+PMO","Mav34733");

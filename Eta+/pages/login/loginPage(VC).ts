@@ -23,6 +23,9 @@ public async loginUser(){
     await this.loginPageLocator.passwordField().fill("password");
     await this.loginPageLocator.signinButton().click()
     console.log("sucessfully login")
+    
+    
+    
 }
 
 constructor(public page : Page){
