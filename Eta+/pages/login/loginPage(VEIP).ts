@@ -19,8 +19,8 @@ export class ValidEmailInvalidPassword{
     }
 
     public async loginTestCase(){
-        await this.loginPageLocator.usernameField().fill("username");
-        await this.loginPageLocator.passwordField().fill("password");
+        await this.loginPageLocator.usernameField().fill('ETA+ PMO');
+        await this.loginPageLocator.passwordField().fill('Mav34733699');
         await this.loginPageLocator.signinButton().click()
         console.log("username and password is not match")
     }

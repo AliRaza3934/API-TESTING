@@ -9,55 +9,46 @@ import { CheckBox } from './pages/login/loginPage(checkbox)';
 import { ForgotPassword } from './pages/login/loginPage(forgetPassword)';
 
 
-//let loginFunc = new Login();
 
-//A2 Login Test case with valid credentials
 test.beforeEach('ETA+Page',async({page}) =>{
   await page.goto('https://int.eta-plus.com/#!/startpage/login');
 })
+
 test('A2 Login Test case with valid credentials', async ({ page }) => {
   
   const validtestcase = new ValidTestCase(page);
   await validtestcase.loginUser();
-  
-  
-//test.setTimeout(30000);
- // await  loginFunc.loginUser("ETA+PMO","Mav34733");
-  
-// Expect a title "to contain" a substring.
-  //await expect(page).toHaveTitle(/Noch Keinen Account?/                        
+  await expect((await page.locator("div[class='px-3 pb-5 ng-star-inserted'] p[class='pb-3 text-2xl capitalize text-primary font-bold']"))).toHaveText('Cluster');
+  console.log('text is found')
+  //await page.waitForTimeout(150000);
 });
-//test.skip('',async ({ page}) => {
- //await  loginFunc.loginUser("ETA+PMO","Mav34733");
-//});
 
 //A3 Login Test case with invalid credentials
 test('A3 Login Test case with invalid credentials',async ({page}) => {
 const invalidtestcase = new InvalidTestCase(page);
-//await page.goto('https://int.eta-plus.com/#!/startpage/login');
 await invalidtestcase.loginTest();
-
-//await page.waitForTimeout(30000);
-
 });
 
+//A4 Login Test case with valid email and invalid password credentials
 test('A4 Login Test case with valid email and invalid password credentials',async({page}) =>{
   const validEmailInvalidPassword = new ValidEmailInvalidPassword(page);
-  //await page.goto('https://int.eta-plus.com/#!/startpage/login');
   await validEmailInvalidPassword.loginTestCase();
 })
 
+//A5 Login Test case with invalid email and valid password credentials
 test('A5 Login Test case with invalid email and valid password credentials',async({page}) =>{
   const invalidEmailValidPassword = new InvalidEmailValidPassword(page);
   //await page.goto('https://int.eta-plus.com/#!/startpage/login');
   await invalidEmailValidPassword.testCases();
 })
 
+//A6 Login Test case should check the box and keep login
 test('A6 Login Test case should check the box and keep login',async({page}) => {
  const checkBox = new CheckBox(page);
  await checkBox.loggIned();
 })
 
+//A7 and A8 Login Test Case should click on the forgot password and send the link
 test('A7 and A8 Login Test Case should click on the forgot password and send the link',async({page}) => {
   const forgotPassword = new ForgotPassword(page);
   await forgotPassword.forgot();
