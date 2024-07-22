@@ -4,8 +4,8 @@ import * as loginPageResources from "../resources/LoginPage(checkbox)Locators.js
 import { PageElement } from "../resources/interfaces/IpageElements";
 
 
-//let username ="ETA+PMOzz"
-//let password ="Mav34733"
+let userName ="ETA+PMOzz"
+let passWord ="Mav34733"
 
 function getResource(resourceName: string) {
     return loginPageResources.webElements.find((element: PageElement) => element.elementName == resourceName) as PageElement
@@ -18,8 +18,8 @@ export class CheckBox{
         checkBox      : () => pageFixture.page.locator(getResource('checkBox').selectorValue),
     }
 public async loggIned(){
-    await this.loginPageLocator.usernameField().fill('ETA+ PMO');
-    await this.loginPageLocator.passwordField().fill('Mav34733');
+    await this.loginPageLocator.usernameField().fill(userName);
+    await this.loginPageLocator.passwordField().fill(passWord);
     await this.loginPageLocator.checkBox().click();
     await this.loginPageLocator.signinButton().click()
     console.log("user is keep logined")

@@ -3,8 +3,8 @@ import { PageElement } from "../resources/interfaces/IpageElements";
 import { pageFixture } from "../hooks/PageFixture";
 import * as loginPageResources from "../resources/LoginPageIVCLocators.json"
 
- //let username ="ETA+PMOzz"
- //let password ="Mav347336"
+let userName ="ETA+PMOzz"
+let passWord ="Mav347336"
 
  function getResource(resourceName: string) {
     return loginPageResources.webElements.find((element: PageElement) => element.elementName == resourceName) as PageElement
@@ -19,8 +19,8 @@ export class InvalidTestCase{
     }
     
 public async loginTest(){
-    await this.loginPageLocator.usernameField().fill('ETA+ PMOzz');
-    await this.loginPageLocator.passwordField().fill('Mav347336');
+    await this.loginPageLocator.usernameField().fill(userName);
+    await this.loginPageLocator.passwordField().fill(passWord);
     await this.loginPageLocator.signinButton().click()
     console.log("invalid username and password")
 }

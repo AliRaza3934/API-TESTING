@@ -4,8 +4,8 @@ import * as loginPageResources from "../resources/LoginPageIEVPLocators.json"
 import { PageElement } from "../resources/interfaces/IpageElements";
 
 
-//let username ="ETA+PMOzz"
-//let password ="Mav34733"
+let userName ="ETA+PMOzz"
+let password ="Mav34733"
 
 function getResource(resourceName: string) {
     return loginPageResources.webElements.find((element: PageElement) => element.elementName == resourceName) as PageElement
@@ -17,8 +17,8 @@ export class InvalidEmailValidPassword{
         signinButton  : () => pageFixture.page.locator(getResource('siginButton').selectorValue),
     }
 public async testCases(){
-    await this.loginPageLocator.usernameField().fill('ETA+PMOzz');
-    await this.loginPageLocator.passwordField().fill('Mav34733');
+    await this.loginPageLocator.usernameField().fill(userName);
+    await this.loginPageLocator.passwordField().fill(password);
     await this.loginPageLocator.signinButton().click()
     console.log("username and password is not match")
 }

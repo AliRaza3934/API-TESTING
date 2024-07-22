@@ -19,8 +19,8 @@ export class ValidTestCase{
         
 public async loginUser(){
 
-    await this.loginPageLocator.usernameField().fill('ETA+ PMO');
-    await this.loginPageLocator.passwordField().fill('Mav34733');
+    await this.loginPageLocator.usernameField().fill(userName);
+    await this.loginPageLocator.passwordField().fill(passWord);
     await this.loginPageLocator.signinButton().click();
     console.log("sucessfully login")
     
