@@ -32,6 +32,4 @@ public async newBuilding(){
 
 constructor(public page : Page){
     pageFixture.page = page;
-    //this.intenviorment = new IntEnviorment(this.page);
-}
-}
+    //this.intenviorment = new IntEnviorment(this.page)

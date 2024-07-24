@@ -50,17 +50,4 @@ test.skip('A6 Login Test case should check the box and keep login',async({page})
 })
 
 //A7 and A8 Login Test Case should click on the forgot password and send the link
-test.skip('A7 and A8 Login Test Case should click on the forgot password and send the link',async({page}) => {
-  const forgotPassword = new ForgotPassword(page);
-  await forgotPassword.forgot();
-  
-})
-
-// A2 Building Regression Testcases
-
-test('A2 Building Regression Testcase',async({page})=>{
-  const buildingPage = new BuildingTestCase(page);
-  await buildingPage.newBuilding();
-})
-
-
+test.s
