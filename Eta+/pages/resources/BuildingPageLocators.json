@@ -1,0 +1,21 @@
+{
+    "name": "BuildingPageLocator",
+    "webElements":[
+        {
+            "elementName":"usernameField",
+            "selectorValue":"//input[@id='username']"
+        },
+        {
+            "elementName":"passwordField",
+            "selectorValue":"//input[@placeholder='Passwort']"
+        },
+        {
+            "elementName":"siginButton",
+            "selectorValue":"//button[@type='button']"
+        },
+       {
+          "elementName":"addnewBuilding",
+          "selectorValue":"//span[@class='p-button-label']"
+       }
+    ]
+}
