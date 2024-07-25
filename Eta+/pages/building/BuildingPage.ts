@@ -37,4 +37,21 @@ public async newBuilding(){
     await this.buildingPageLocator.usernameField().fill(userName);
     await this.buildingPageLocator.passwordField().fill(passWord);
     await this.buildingPageLocator.signinButton().click();
-    console.log("sucessfully 
+    console.log("sucessfully login")
+    await this.buildingPageLocator.addnewBuilding().click();
+    await this.buildingPageLocator.surname().fill(SurName);
+    await this.buildingPageLocator.federalstate().click();
+    await this.buildingPageLocator.optionField().click();
+    await this.buildingPageLocator.location().fill(locaTion);
+    await this.buildingPageLocator.postalCode().fill(postalCode);
+    await this.buildingPageLocator.streetNumber().fill(streetN);
+    await this.buildingPageLocator.nummberField().fill(nummBer);
+    await this.buildingPageLocator.addButton().click();
+
+}
+
+constructor(public page : Page){
+    pageFixture.page = page;
+  //this.intenviorment = new IntEnviorment(this.page);
+}
+}

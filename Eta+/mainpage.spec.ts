@@ -67,4 +67,9 @@ test.skip('A3 Building Regression Testcase',async({page})=>{
 test('Search Building Regression Testcase',async({page})=>{
   const buildingSearch = new BuildingSearchTestCase(page);
   await buildingSearch.buildingSearch();
-  //await //expect((await page.locator("//div[@class='bg-gray-40
+  //await //expect((await page.locator("//div[@class='bg-gray-400 h-full w-full ng-star-inserted']"))).click();
+  //console.log('building is found')
+})
+
+
+
