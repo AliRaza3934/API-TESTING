@@ -8,11 +8,13 @@ import { beforeEach }                from 'node:test';
 import { CheckBox }                  from './pages/login/loginPage(checkbox)';
 import { ForgotPassword }            from './pages/login/loginPage(forgetPassword)';
 import {BuildingTestCase}            from '../Eta+/pages/building/BuildingPage';
-
+import { BuildingSearchTestCase }    from './pages/building/searchBuilding';
 
 
 test.beforeEach('ETA+Page',async({page}) =>{
   await page.goto('https://int.eta-plus.com/#!/startpage/login');
+  const validtestcase = new ValidTestCase(page);
+  await validtestcase.loginUser();
 })
 
 test.skip('A2 Login Test case with valid credentials', async ({ page }) => {
@@ -50,4 +52,24 @@ test.skip('A6 Login Test case should check the box and keep login',async({page})
 })
 
 //A7 and A8 Login Test Case should click on the forgot password and send the link
-test.s
+test.skip('A7 and A8 Login Test Case should click on the forgot password and send the link',async({page}) => {
+  const forgotPassword = new ForgotPassword(page);
+  await forgotPassword.forgot();
+  
+})
+
+// A2 Building Regression Testcases
+
+test.skip('A3 Building Regression Testcase',async({page})=>{
+  const buildingPage = new BuildingTestCase(page);
+  await buildingPage.newBuilding();
+})
+test('Search Building Regression Testcase',async({page})=>{
+  const buildingSearch = new BuildingSearchTestCase(page);
+  await buildingSearch.buildingSearch();
+  //await //expect((await page.locator("//div[@class='bg-gray-400 h-full w-full ng-star-inserted']"))).click();
+  //console.log('building is found')
+})
+
+
+

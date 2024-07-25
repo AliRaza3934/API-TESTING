@@ -13,9 +13,41 @@
             "elementName":"siginButton",
             "selectorValue":"//button[@type='button']"
         },
-       {
-          "elementName":"addnewBuilding",
-          "selectorValue":"//span[@class='p-button-label']"
-       }
+        {
+            "elementName":"addnewBuilding",
+            "selectorValue":"//span[@class='p-button-label']"
+        },
+        {
+            "elementName":"nameOwner",
+            "selectorValue":"//input[@id='name-input']"
+        },
+        {
+            "elementName":"federalState",
+            "selectorValue":"//span[@class='p-element p-dropdown-label p-inputtext p-dropdown-label-empty ng-star-inserted']"
+        },
+        {
+            "elementName":"Ort",
+            "selectorValue":"//input[@id='city-input']"
+        },
+        {
+            "elementName":"Postleitzahl",
+            "selectorValue":"//input[@id='zipcode-input']"
+        },
+        {
+            "elementName":"straße",
+            "selectorValue":"//input[@id='street-input']"
+        },
+        {
+            "elementName":"Nummer",
+            "selectorValue":"//input[@id='streetnumber-input']"
+        },
+        {
+            "elementName":"addButton",
+            "selectorValue":"//span[@class='p-button-label ng-star-inserted']"
+        },
+        {
+            "elementName":"selectOption",
+            "selectorValue":"#federal-state-input > span"
+        }
     ]
 }

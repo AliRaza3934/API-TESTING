@@ -1,0 +1,13 @@
+{
+    "name": "SearchBuildingPageLocator",
+    "webElements":[
+        {
+            "elementName":"searchBar",
+            "selectorValue":"input[placeholder='Suchen']"
+        },
+        {
+            "elementName":"findBuilding",
+            "selectorValue":"//div[@class='bg-gray-400 h-full w-full ng-star-inserted']"
+        }
+        ]
+        }
