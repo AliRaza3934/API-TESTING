@@ -16,7 +16,7 @@ export class BuildingSearchTestCase{
 
 public async buildingSearch(){
 await this.buildingPageLocator.searchbarField().fill(buildingName);
-//await this.buildingPageLocator.findBuilding().click();
+//sawait this.buildingPageLocator.findBuilding().click();
 
 }
 
