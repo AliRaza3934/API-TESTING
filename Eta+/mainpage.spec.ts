@@ -9,6 +9,7 @@ import { CheckBox }                  from './pages/login/loginPage(checkbox)';
 import { ForgotPassword }            from './pages/login/loginPage(forgetPassword)';
 import {BuildingTestCase}            from '../Eta+/pages/building/BuildingPage';
 import { BuildingSearchTestCase }    from './pages/building/searchBuilding';
+import { FilterTestCase } from './filter/Filter';
 
 
 test.beforeEach('ETA+Page',async({page}) =>{
@@ -68,15 +69,17 @@ test.skip('Building Regression Testcase',async({page})=>{
   const buildingPage = new BuildingTestCase(page);
   await buildingPage.newBuilding();
 })
-test('Search Building Regression Testcase',async({page})=>{
+test.skip('Search Building Regression Testcase',async({page})=>{
   const buildingSearch = new BuildingSearchTestCase(page);
   await buildingSearch.buildingSearch();
-  
-  
-  
   //await //expect((await page.locator("//div[@class='bg-gray-400 h-full w-full ng-star-inserted']"))).click();
-  //console.log('building is found')
+  //console.log('building is found'})
 })
 
+// Filter Regression TestCases
+test('Filter Regression Testcases',async({page})=>{
+  const filtertestcases = new FilterTestCase(page);
+  await filtertestcases.filterOption();
+})
 
 

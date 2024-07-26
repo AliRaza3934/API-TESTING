@@ -24,8 +24,6 @@ await this.buildingPageLocator.searchbutton().click();
 await this.buildingPageLocator.searchbarField().fill(buildingName);
 await this.buildingPageLocator.findBuilding().click();
 
-
-
 }
 
 constructor(public page : Page){
