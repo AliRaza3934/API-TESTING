@@ -18,9 +18,7 @@ function getResource(resourceName: string) {
 
 export class BuildingTestCase{
         buildingPageLocator ={
-            usernameField : () => pageFixture.page.locator(getResource('usernameField').selectorValue),
-            passwordField : () => pageFixture.page.locator(getResource('passwordField').selectorValue),
-            signinButton  : () => pageFixture.page.locator(getResource('siginButton').selectorValue),
+            
             addnewBuilding: () => pageFixture.page.locator(getResource('addnewBuilding').selectorValue),
             surname       : () => pageFixture.page.locator(getResource('nameOwner').selectorValue),
             federalstate  : () => pageFixture.page.locator(getResource('federalState').selectorValue),
@@ -34,10 +32,6 @@ export class BuildingTestCase{
         
 public async newBuilding(){
 
-    await this.buildingPageLocator.usernameField().fill(userName);
-    await this.buildingPageLocator.passwordField().fill(passWord);
-    await this.buildingPageLocator.signinButton().click();
-    console.log("sucessfully login")
     await this.buildingPageLocator.addnewBuilding().click();
     await this.buildingPageLocator.surname().fill(SurName);
     await this.buildingPageLocator.federalstate().click();

@@ -15,8 +15,12 @@ test.beforeEach('ETA+Page',async({page}) =>{
   await page.goto('https://int.eta-plus.com/#!/startpage/login');
   const validtestcase = new ValidTestCase(page);
   await validtestcase.loginUser();
+  
 })
-
+test.skip('ETA+Page',async({page}) =>{
+  await page.goto('https://int.eta-plus.com/#!/startpage/login');
+})
+//Login Regression Test cases
 test.skip('A2 Login Test case with valid credentials', async ({ page }) => {
   
   const validtestcase = new ValidTestCase(page);
@@ -58,15 +62,18 @@ test.skip('A7 and A8 Login Test Case should click on the forgot password and sen
   
 })
 
-// A2 Building Regression Testcases
+//  Building Regression Testcases
 
-test.skip('A3 Building Regression Testcase',async({page})=>{
+test.skip('Building Regression Testcase',async({page})=>{
   const buildingPage = new BuildingTestCase(page);
   await buildingPage.newBuilding();
 })
 test('Search Building Regression Testcase',async({page})=>{
   const buildingSearch = new BuildingSearchTestCase(page);
   await buildingSearch.buildingSearch();
+  
+  
+  
   //await //expect((await page.locator("//div[@class='bg-gray-400 h-full w-full ng-star-inserted']"))).click();
   //console.log('building is found')
 })
