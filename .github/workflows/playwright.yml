@@ -32,11 +32,11 @@ jobs:
       if: ${{ success() }}
       uses: arqureshi.3934@gmail.com
       with:
-          server_address: arqureshi.3934@gmail.com
+          server_address: smtp.gmail.com.
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: CI Pipeline Succeeded
+          subject: ETA+ CI Pipeline Succeeded
           body: Your pipeline has passed successfully.
           to: arqureshi.3934@gmail.com
           from: arqureshi.3934@gmail.com
