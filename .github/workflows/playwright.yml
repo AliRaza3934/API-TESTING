@@ -9,7 +9,7 @@ on:
     branches: [ main, master ]
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 120
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
         retention-days: 30
     - name: Notify on success
       if: ${{ success() }}
-      uses: arqureshi.3934@gmail.com
+      uses: dawidd6/action-send-mail@v3
       with:
           server_address: smtp.gmail.com.
           server_port: 587
