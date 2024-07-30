@@ -25,3 +25,15 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: Notify on success
+      if: ${{ success() }}
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com.
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: API CI Pipeline Succeeded
+        body: Ippi your pipeline has passed successfully.
+        to: arqureshi.3934@gmail.com
+        from: arqureshi.3934@gmail.com
