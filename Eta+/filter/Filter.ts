@@ -10,6 +10,7 @@ function getResource(resourceName: string) {
     export class FilterTestCase{
         filterLocator ={
             filterOption: () => pageFixture.page.locator(getResource('filterOption').selectorValue),
+            facilityMang: () =>
         
         }
 
