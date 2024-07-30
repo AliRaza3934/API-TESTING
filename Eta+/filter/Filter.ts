@@ -15,9 +15,4 @@ function getResource(resourceName: string) {
         }
 
     public async filterOption(){
-        await this.filterLocator.filterOption().click();
-    }
-    constructor(public page:Page){
-        pageFixture.page = page;
-    }
-    }
+        await this.filterLocator.filterOption().click(
