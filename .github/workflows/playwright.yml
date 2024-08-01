@@ -1,12 +1,15 @@
 name: Playwright Tests
 on:
+  schedule:
+    # Runs at 6 AM UTC (8 AM Berlin time) Monday to Friday
+    - cron: '0 6 * * 1-5' 
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 120
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -33,7 +36,7 @@ jobs:
         server_port: 587
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: API CI Pipeline Succeeded
-        body: Ippi your pipeline has passed successfully.
+        subject: ETA+ CI Pipeline Succeeded
+        body: Your pipeline has passed successfully.
         to: arqureshi.3934@gmail.com
         from: arqureshi.3934@gmail.com
