@@ -43,3 +43,7 @@ test("Delete user",async({request})=>{
   console.log('user is deleted');
   //expect(response.status()).toBe(204);
 })
+
+test.skip('',async({})=>{
+
+})
