@@ -45,5 +45,5 @@ test("Delete user",async({request})=>{
 })
 
 test.skip('',async({})=>{
-
+ console.log("hello")
 })
