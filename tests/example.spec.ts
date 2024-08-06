@@ -46,4 +46,5 @@ test("Delete user",async({request})=>{
 
 test.skip('',async({})=>{
  console.log("hello")
+ const response = await request.delete('')
 })
